@@ -2,7 +2,7 @@
 
 ## What it contains ?
 
-- As we know reactjs is fast in dom manipulation but making reactjs powerful we need more than this we need a bandler to make it more powerful.
+- As we know reactjs is good in dom manipulation but for making reactjs more powerful we need more than this we need a bundler to make it more powerful.
 
 - In this repo i am gonna talk about parcel that is one of the bundler. Let's get started....
 
@@ -16,7 +16,7 @@ npm init
 
 ---
 
-- It generate a file named as package.json and this file contains the configuration for our project. So after initilizing npm in our project we need to install parcel (bundler) for our project.
+- It generate a file named as package.json and this file contains the configuration for our project. So after initializing npm in our project we need to install parcel (bundler) for our project.
 
 ---
 
@@ -28,10 +28,9 @@ npm install -D parcel
 
 ---
 
--D means we need parcel in our development environment. After installing parcel we got two thing first is package-lock.json file and a node_module.
+- -D means we need parcel in our development environment. After installing parcel we got two thing first is package-lock.json file and second we got a node_module.
 
-package-lock.json contains the exact version of all the dependencies and node_module contains all the packages parcel need.
-after installing parcel now we need to install react and react-dom in our project directory.
+- package-lock.json contains the exact version of all the dependencies and node_module contains all the packages that parcel needs. after installing parcel now we need to install react and react-dom in our project directory.
 
 ---
 
