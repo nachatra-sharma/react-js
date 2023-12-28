@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDom from "react-dom/client";
-
+import { useState } from "react";
 const Header = () => {
+  const [btnName, setBtnName] = useState("Login");
   return (
     <React.Fragment>
       <div className="header">
@@ -52,6 +52,20 @@ const Header = () => {
                 <li>
                   <span>Cart</span>
                 </li>
+              </a>
+              <a href="#">
+                <button
+                  className="current-session"
+                  onClick={() => {
+                    if (btnName === "Login") {
+                      setBtnName("Logout");
+                    } else {
+                      setBtnName("Login");
+                    }
+                  }}
+                >
+                  {btnName}
+                </button>
               </a>
             </ul>
           </div>

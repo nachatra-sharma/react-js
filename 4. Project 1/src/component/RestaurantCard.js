@@ -5,8 +5,8 @@ import { CDN_URL } from "../utils/constant";
 
 const RestaurantCard = (props) => {
   const { restaurantObject } = props;
-  const { cloudinaryImageId, name, avgRating } = restaurantObject;
-  const { slaString } = restaurantObject.sla;
+  const { cloudinaryImageId, name, avgRating } = restaurantObject.info;
+  const { slaString } = restaurantObject.info.sla;
   return (
     <React.Fragment>
       <div className="card">

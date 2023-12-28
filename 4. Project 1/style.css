@@ -37,6 +37,7 @@
   display: flex;
   gap: 70px;
   list-style-type: none;
+  align-items: center;
 }
 
 .menu-items > ul > a {
@@ -60,6 +61,9 @@
 }
 
 .filter-search {
+  gap: 30px;
+  align-items: center;
+  display: flex;
   width: 86%;
   margin: auto;
 }
@@ -145,6 +149,51 @@
 
 .filter-btn {
   padding: 5px 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/* Shimmer Component */
+
+#shimmer-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: auto;
+}
+
+.shimmer-card {
+  margin: 30px;
+  width: 250px;
+  height: 250px;
+  background-color: rgb(243, 243, 234);
+}
+
+.current-session {
+  padding: 10px 40px;
+  border: 1px solid black;
+  cursor: pointer;
+  color: rgb(27, 27, 27);
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 3px 2px;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  outline: none;
+}
+
+.search-container button {
+  padding: 3px 20px;
   background: transparent;
   outline: none;
   border: none;
