@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import star from "../../star.png";
 import { CDN_URL } from "../utils/constant";
 

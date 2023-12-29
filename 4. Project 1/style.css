@@ -200,3 +200,46 @@
   border: 1px solid black;
   cursor: pointer;
 }
+
+.error-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.error-container img {
+  width: 200px;
+}
+
+.error-container h2 {
+  font-size: 1.8rem;
+  color: rgba(14, 13, 13, 0.863);
+  margin-top: 50px;
+  letter-spacing: 2px;
+}
+
+.error-container p {
+  margin: 10px 0px;
+  color: rgb(129, 126, 126);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.error-btn {
+  background-color: rgba(255, 140, 46, 0.87);
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error-container span {
+  font-size: 0.8rem;
+  margin-top: 40px;
+}

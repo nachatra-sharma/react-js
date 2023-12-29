@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <div className="header">
         <div className="header-container">
           <div className="logo">
-            <a href="">
+            <Link to="">
               <svg
                 className="_8pSp-"
                 viewBox="0 0 559 825"
@@ -35,25 +36,26 @@ const Header = () => {
                   </linearGradient>
                 </defs>
               </svg>
-            </a>
+            </Link>
           </div>
           <div className="menu-items">
             <ul>
-              <a href="">
-                <li>Offers</li>
-              </a>
-              <a href="">
-                <li>Help</li>
-              </a>
-              <a href="">
-                <li>Sign In</li>
-              </a>
-              <a href="">
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+
+              <Link to="/about">
+                <li>About</li>
+              </Link>
+              <Link to="/contact">
+                <li>Contact</li>
+              </Link>
+              <Link>
                 <li>
                   <span>Cart</span>
                 </li>
-              </a>
-              <a href="#">
+              </Link>
+              <Link>
                 <button
                   className="current-session"
                   onClick={() => {
@@ -66,7 +68,7 @@ const Header = () => {
                 >
                   {btnName}
                 </button>
-              </a>
+              </Link>
             </ul>
           </div>
         </div>
