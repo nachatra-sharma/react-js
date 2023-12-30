@@ -1,3 +1,9 @@
+:root {
+  --light-dark: rgb(63, 60, 60);
+  --light-gray: #7e808c;
+  --bright-dark: #3e4152;
+}
+
 * {
   margin: 0%;
   padding: 0%;
@@ -242,4 +248,157 @@
 .error-container span {
   font-size: 0.8rem;
   margin-top: 40px;
+}
+
+.restaurent-container a {
+  text-decoration: none;
+}
+
+#menu-heading {
+  font-family: sans-serif;
+  width: 60%;
+  margin: 50px auto;
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.restaurant-card1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card1 h2 {
+  font-size: 1.2rem;
+  color: var(--light-dark);
+  margin-bottom: 4px;
+}
+
+.restaurant-card1 p {
+  letter-spacing: 0.6px;
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.restaurant-card2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #dddde4;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.restaurant-card2 div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.restaurant-card2 img {
+  width: 15px;
+  height: 15px;
+}
+
+.restaurant-card2 span {
+  font-weight: bolder;
+  color: #3d9b6d;
+  font-size: 0.9rem;
+}
+
+.restaurant-card2 .line {
+  background-color: #c9c9d1;
+  width: 90%;
+  height: 1px;
+}
+
+.restaurant-card2 p {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: var(--light-gray);
+}
+
+#travel-info-container {
+  display: flex;
+  margin: 20px 0px;
+  align-items: center;
+  gap: 10px;
+}
+
+#travel-info-container span {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+}
+
+.dotted-line {
+  border-bottom: 1px dotted #d3d3d3;
+  padding-bottom: 30px;
+}
+
+#recommended {
+  margin-top: 20px;
+}
+
+#recommended h3 {
+  font-size: 1.1rem;
+  color: var(--light-dark);
+  font-weight: bolder;
+}
+
+#menu-card {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#menu-card #res-name {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#menu-card #res-name h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--bright-dark);
+}
+
+#menu-card #res-name p {
+  color: var(--light-gray);
+  font-size: 0.85rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.6px;
+  text-align: justify;
+}
+
+#menu-card #res-name span {
+  color: var(--bright-dark);
+  font-size: 0.85rem;
+}
+
+#res-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#res-photo img {
+  width: 100px;
+  height: 100px;
+}
+
+#res-photo button {
+  color: #3d9b6d;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  border: 1px solid var(--light-gray);
+  padding: 5px 0px;
+  cursor: pointer;
 }
