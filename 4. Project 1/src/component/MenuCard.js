@@ -1,12 +1,13 @@
-import { CDN_URL } from "../utils/constant";
+import { CDN_URL } from "../utils/constant"
 const MenuCard = (props) => {
-  const { name, description, price, imageId } = props?.itemList?.card?.info;
+  const { name, price, imageId, defaultPrice, description } =
+    props.menu.card.info
   return (
     <>
       <div id="menu-card">
         <div id="res-name">
           <h4>{name}</h4>
-          <span>₹ {price / 100}</span>
+          <span>₹ {price ? price / 100 : defaultPrice / 100}</span>
           <p>{description}</p>
         </div>
         <div id="res-photo">
@@ -16,7 +17,7 @@ const MenuCard = (props) => {
       </div>
       <div className="dotted-line"></div>
     </>
-  );
-};
+  )
+}
 
-export default MenuCard;
+export default MenuCard

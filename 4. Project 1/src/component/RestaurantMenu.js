@@ -1,24 +1,11 @@
-import { MENU_URL } from "../utils/constant";
-import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer.js";
-import { useParams } from "react-router-dom";
-import star from "../../star.png";
-import { CYCLE_ICON_URL } from "../utils/constant";
-import MenuCard from "./MenuCard.js";
+import Shimmer from "./Shimmer.js"
+import star from "../../star.png"
+import { CYCLE_ICON_URL } from "../utils/constant"
+import CategoryBlock from "./CategoryBlock.js"
+import useRestaurantMenu from "../utils/useRestaurantMenu.js"
 const RestaurantMenu = () => {
-  const { resId } = useParams();
-  const [resItems, setResItems] = useState(null);
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_URL + resId);
-    const json = await data.json();
-    setResItems(json?.data);
-  };
-  if (resItems === null) return <Shimmer />;
-
+  const resItems = useRestaurantMenu()
+  if (resItems === null) return <Shimmer />
   const {
     name,
     avgRatingString,
@@ -26,11 +13,15 @@ const RestaurantMenu = () => {
     areaName,
     totalRatingsString,
     feeDetails,
-  } = resItems?.cards[0]?.card?.card?.info;
-  const { lastMileTravelString } = resItems?.cards[0]?.card?.card?.info?.sla;
-  const { itemCards } =
-    resItems?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card;
+  } = resItems?.cards[0]?.card?.card?.info
+  const { lastMileTravelString } = resItems?.cards[0]?.card?.card?.info?.sla
+  const category = resItems.cards[2].groupedCard.cardGroupMap.REGULAR.cards
+
+  const categoryItem = category.filter(
+    (c) =>
+      c?.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  )
 
   return (
     <div id="menu-heading">
@@ -56,18 +47,16 @@ const RestaurantMenu = () => {
         <span>{feeDetails.message}</span>
       </div>
       <div className="dotted-line"></div>
-      <div id="recommended">
-        <h3>Recommended ({itemCards.length})</h3>
-        <ul>
-          {itemCards.map((item) => {
-            return (
-              <MenuCard key={item.card.info.id} itemList={item}></MenuCard>
-            );
-          })}
-        </ul>
-      </div>
+      {categoryItem.map((subItem) => {
+        return (
+          <CategoryBlock
+            key={subItem.card.card.title}
+            categoryItems={subItem}
+          />
+        )
+      })}
     </div>
-  );
-};
+  )
+}
 
-export default RestaurantMenu;
+export default RestaurantMenu

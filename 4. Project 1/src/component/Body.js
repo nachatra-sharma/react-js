@@ -5,13 +5,16 @@ import { useState, useEffect } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 const Body = () => {
+  // Local state variable
   const [RestaurantList, setRestaurantList] = useState([]);
   const [filterRestaurant, setFilterRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  // useEffect Called
   useEffect(() => {
     fetchData();
   }, []);
+  // API Data Fetching
 
   const fetchData = async () => {
     const data = await fetch(RESTAURANT_URL);

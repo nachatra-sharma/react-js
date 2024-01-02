@@ -1,8 +1,11 @@
 import React from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const status = useOnlineStatus();
+  console.log(status);
   return (
     <React.Fragment>
       <div className="header">
@@ -43,7 +46,6 @@ const Header = () => {
               <Link to="/">
                 <li>Home</li>
               </Link>
-
               <Link to="/about">
                 <li>About</li>
               </Link>
@@ -55,6 +57,18 @@ const Header = () => {
                   <span>Cart</span>
                 </li>
               </Link>
+              <Link>
+                <li>
+                  <span>
+                    {status ? (
+                      <i className="fa-solid fa-wifi"></i>
+                    ) : (
+                      <i class="fa-solid fa-plane-up"></i>
+                    )}
+                  </span>
+                </li>
+              </Link>
+
               <Link>
                 <button
                   className="current-session"
