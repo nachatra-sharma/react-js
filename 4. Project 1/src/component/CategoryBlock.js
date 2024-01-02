@@ -11,18 +11,15 @@ const CategoryBlock = (props) => {
       <div
         className="restaurant-categories"
         onClick={() => {
-          if (showMenu === false) {
-            setShowMenu(true);
-          } else {
-            setShowMenu(false);
-          }
+          if (showMenu === false) setShowMenu(true);
+          else setShowMenu(false);
         }}
       >
         <h2>
           {title} ({props.categoryItems.card.card.itemCards.length})
         </h2>
         <span>
-          <i class="fa-solid fa-angle-down"></i>
+          <i className="fa-solid fa-angle-down"></i>
         </span>
       </div>
       {category.map((menuItem) => {

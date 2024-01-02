@@ -1,11 +1,11 @@
-import Shimmer from "./Shimmer.js"
-import star from "../../star.png"
-import { CYCLE_ICON_URL } from "../utils/constant"
-import CategoryBlock from "./CategoryBlock.js"
-import useRestaurantMenu from "../utils/useRestaurantMenu.js"
+import Shimmer from "./Shimmer.js";
+import star from "../../star.png";
+import { CYCLE_ICON_URL } from "../utils/constant";
+import CategoryBlock from "./CategoryBlock.js";
+import useRestaurantMenu from "../utils/useRestaurantMenu.js";
 const RestaurantMenu = () => {
-  const resItems = useRestaurantMenu()
-  if (resItems === null) return <Shimmer />
+  const resItems = useRestaurantMenu();
+  if (resItems === null) return <Shimmer />;
   const {
     name,
     avgRatingString,
@@ -13,15 +13,15 @@ const RestaurantMenu = () => {
     areaName,
     totalRatingsString,
     feeDetails,
-  } = resItems?.cards[0]?.card?.card?.info
-  const { lastMileTravelString } = resItems?.cards[0]?.card?.card?.info?.sla
-  const category = resItems.cards[2].groupedCard.cardGroupMap.REGULAR.cards
+  } = resItems?.cards[0]?.card?.card?.info;
+  const { lastMileTravelString } = resItems?.cards[0]?.card?.card?.info?.sla;
+  const category = resItems.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
 
   const categoryItem = category.filter(
     (c) =>
       c?.card?.card?.["@type"] ===
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-  )
+  );
 
   return (
     <div id="menu-heading">
@@ -53,10 +53,10 @@ const RestaurantMenu = () => {
             key={subItem.card.card.title}
             categoryItems={subItem}
           />
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default RestaurantMenu
+export default RestaurantMenu;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Shimmer from "../component/Shimmer";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { RESTAURANT_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
@@ -26,6 +26,10 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  // higher order component
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   return RestaurantList.length === 0 ? (
     <Shimmer />
@@ -76,12 +80,17 @@ const Body = () => {
         </div>
         <div className="restaurent-container">
           {filterRestaurant.map((restaurant) => {
+            console.log(restaurant);
             return (
               <Link
                 key={restaurant.info.id}
                 to={"/restaurant/" + restaurant.info.id}
               >
-                <RestaurantCard restaurantObject={restaurant} />
+                {false ? (
+                  <RestaurantCardPromoted restaurantObject={restaurant} />
+                ) : (
+                  <RestaurantCard restaurantObject={restaurant} />
+                )}
               </Link>
             );
           })}

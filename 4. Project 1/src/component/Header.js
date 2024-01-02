@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const status = useOnlineStatus();
-  console.log(status);
   return (
     <React.Fragment>
       <div className="header">
@@ -63,7 +62,7 @@ const Header = () => {
                     {status ? (
                       <i className="fa-solid fa-wifi"></i>
                     ) : (
-                      <i class="fa-solid fa-plane-up"></i>
+                      <i className="fa-solid fa-plane-up"></i>
                     )}
                   </span>
                 </li>
