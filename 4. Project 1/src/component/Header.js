@@ -1,10 +1,10 @@
 import React from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
-  const [btnName, setBtnName] = useState("Login");
   const status = useOnlineStatus();
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <React.Fragment>
       <div className="header">
@@ -42,19 +42,14 @@ const Header = () => {
           </div>
           <div className="menu-items">
             <ul>
-              <Link to="/">
-                <li>Home</li>
-              </Link>
-              <Link to="/about">
-                <li>About</li>
-              </Link>
-              <Link to="/contact">
-                <li>Contact</li>
-              </Link>
-              <Link>
-                <li>
-                  <span>Cart</span>
-                </li>
+              <Link to="/cart">
+                <div className="nav-icon">
+                  <i className="fa-solid fa-cart-shopping"></i>
+                  <li>
+                    <span>Cart</span>
+                  </li>
+                  <h4>{cartItems.length}</h4>
+                </div>
               </Link>
               <Link>
                 <li>
@@ -66,21 +61,6 @@ const Header = () => {
                     )}
                   </span>
                 </li>
-              </Link>
-
-              <Link>
-                <button
-                  className="current-session"
-                  onClick={() => {
-                    if (btnName === "Login") {
-                      setBtnName("Logout");
-                    } else {
-                      setBtnName("Login");
-                    }
-                  }}
-                >
-                  {btnName}
-                </button>
               </Link>
             </ul>
           </div>

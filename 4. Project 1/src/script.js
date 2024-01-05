@@ -2,18 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header.js";
 import Body from "./component/Body.js";
-import About from "./component/About.js";
 import ErrorPage from "./component/ErrorPage.js";
-import Contact from "./component/Contact.js";
 import RestaurantMenu from "./component/RestaurantMenu.js";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Cart from "./component/Cart.js";
 
 const AppLayout = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Outlet />
-    </React.Fragment>
+    <Provider store={appStore}>
+      <React.Fragment>
+        <Header />
+        <Outlet />
+      </React.Fragment>
+    </Provider>
   );
 };
 
@@ -31,12 +34,8 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <ErrorPage />,

@@ -1,18 +1,10 @@
-import { addItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constant";
-import { useDispatch } from "react-redux";
-const MenuCard = (props) => {
-  const dispatch = useDispatch();
-  const handleItems = (props) => {
-    dispatch(addItem(props));
-  };
-
+const CartItem = (props) => {
   const { name, price, imageId, defaultPrice, description } =
-    props.menu.card.info;
-
+    props.item.menu.card.info;
   return (
-    <>
-      <div id="menu-card">
+    <div id="cart-container">
+      <div id="cart-card">
         <div id="res-name">
           <h4>{name}</h4>
           <span>₹ {price ? price / 100 : defaultPrice / 100}</span>
@@ -20,12 +12,11 @@ const MenuCard = (props) => {
         </div>
         <div id="res-photo">
           <img src={CDN_URL + imageId} alt="" />
-          <button onClick={() => handleItems(props)}>ADD +</button>
         </div>
       </div>
       <div className="dotted-line"></div>
-    </>
+    </div>
   );
 };
 
-export default MenuCard;
+export default CartItem;

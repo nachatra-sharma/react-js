@@ -41,12 +41,67 @@ const Body = () => {
             className="filter-btn"
             onClick={() => {
               const filterRestaurant = RestaurantList.filter(
-                (restaurant) => restaurant.info.avgRating > 4.3
+                (restaurant) => restaurant.info.avgRating > 4.0
               );
               setFilterRestaurant(filterRestaurant);
             }}
           >
-            Filter Restaurant
+            Rating 4.0+
+          </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterRestaurant = RestaurantList.filter(
+                (restaurant) => restaurant.info.veg === true
+              );
+              setFilterRestaurant(filterRestaurant);
+            }}
+          >
+            Pure Veg
+          </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterRestaurant = RestaurantList.filter(
+                (restaurant) => restaurant.info.isOpen === true
+              );
+              setFilterRestaurant(filterRestaurant);
+            }}
+          >
+            Opened
+          </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterRestaurant = RestaurantList.filter(
+                (restaurant) => restaurant.info.isOpen === true
+              );
+              setFilterRestaurant(filterRestaurant);
+            }}
+          >
+            Opened
+          </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterRestaurant = RestaurantList.filter(
+                (restaurant) => restaurant.info.isOpen === true
+              );
+              setFilterRestaurant(filterRestaurant);
+            }}
+          >
+            Opened
+          </button>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              const filterRestaurant = RestaurantList.filter(
+                (restaurant) => restaurant.info.isOpen === true
+              );
+              setFilterRestaurant(filterRestaurant);
+            }}
+          >
+            Opened
           </button>
           <button
             className="filter-btn"
@@ -80,7 +135,6 @@ const Body = () => {
         </div>
         <div className="restaurent-container">
           {filterRestaurant.map((restaurant) => {
-            console.log(restaurant);
             return (
               <Link
                 key={restaurant.info.id}
