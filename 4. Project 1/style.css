@@ -412,7 +412,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: relative;
 }
 
 #res-photo img {
@@ -422,17 +421,20 @@
 }
 
 #res-photo button {
-  color: #fff;
+  color: #000;
   font-weight: bold;
   font-size: 0.8rem;
   border: none;
   background: transparent;
-  padding: 5px 20px;
+  padding: 9px 25px;
   cursor: pointer;
   border-radius: 11px;
-  position: absolute;
-  bottom: 0%;
-  left: 16%;
+  background-color: #a6e991;
+  transition: all 0.2s ease-in-out;
+}
+
+#res-photo button:hover {
+  color: #fff;
   background-color: #000;
 }
 
@@ -497,4 +499,70 @@
 .nav-icon h4 {
   font-family: sans-serif;
   font-size: 1rem;
+}
+
+.empty-cart-img {
+  width: 100%;
+  text-align: center;
+}
+
+.empty-cart-img img {
+  width: 350px;
+  margin-top: 40px;
+}
+
+.empty-cart-text {
+  text-align: center;
+  margin-top: 40px;
+  line-height: 3rem;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.empty-cart-text h2 {
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: var(--bright-dark);
+}
+
+.empty-cart-text h2 span {
+  color: #e77416;
+}
+
+.empty-cart-text p {
+  color: #7e808c;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.empty-cart-text button {
+  padding: 15px 30px;
+  background-color: #ff7300;
+  border: none;
+  cursor: pointer;
+  border-radius: 21px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #2e303d;
+}
+
+.empty-cart-text button i {
+  margin-right: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff9641;
+  border-radius: 11px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
