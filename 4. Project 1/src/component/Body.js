@@ -73,39 +73,6 @@ const Body = () => {
           <button
             className="filter-btn"
             onClick={() => {
-              const filterRestaurant = RestaurantList.filter(
-                (restaurant) => restaurant.info.isOpen === true
-              );
-              setFilterRestaurant(filterRestaurant);
-            }}
-          >
-            Opened
-          </button>
-          <button
-            className="filter-btn"
-            onClick={() => {
-              const filterRestaurant = RestaurantList.filter(
-                (restaurant) => restaurant.info.isOpen === true
-              );
-              setFilterRestaurant(filterRestaurant);
-            }}
-          >
-            Opened
-          </button>
-          <button
-            className="filter-btn"
-            onClick={() => {
-              const filterRestaurant = RestaurantList.filter(
-                (restaurant) => restaurant.info.isOpen === true
-              );
-              setFilterRestaurant(filterRestaurant);
-            }}
-          >
-            Opened
-          </button>
-          <button
-            className="filter-btn"
-            onClick={() => {
               setFilterRestaurant(RestaurantList);
             }}
           >

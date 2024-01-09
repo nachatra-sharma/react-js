@@ -1,7 +1,6 @@
 import { addItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
-import AddToCart from "./AddToCart";
 const MenuCard = (props) => {
   const dispatch = useDispatch();
   const handleItems = (props) => {

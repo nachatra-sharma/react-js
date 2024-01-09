@@ -84,7 +84,7 @@
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: space-between;
   margin: 40px auto;
 }
 
@@ -550,19 +550,18 @@
   margin-right: 5px;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+.btn-container {
+  width: 68%;
+  margin: 40px auto;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ff9641;
-  border-radius: 11px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.clear-cart-btn {
+  padding: 15px 30px;
+  background-color: #ff7300;
+  border: none;
+  cursor: pointer;
+  border-radius: 21px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #2e303d;
 }

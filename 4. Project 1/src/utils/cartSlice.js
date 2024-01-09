@@ -11,9 +11,9 @@ const cartSlice = createSlice({
       state.items.push(action.payload);
     },
     removeItem: (state, action) => {
-      state.items.pop();
+      state.items.splice(action, 1);
     },
-    clearItems: (state, action) => {
+    clearItems: (state) => {
       state.items.length = 0;
     },
   },
